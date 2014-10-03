@@ -6,7 +6,6 @@
 # - better https check, 
 # - add timeout parameter 
 # - rewrite with httparty or faraday
-#
 
 require 'net/http'
 require 'uri'
