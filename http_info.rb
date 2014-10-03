@@ -41,7 +41,7 @@ File.open(input_file).each_line{|target|
 		#Parse host and port into URI
 		uri = URI.parse("http://#{host}:#{port}")
 	
-		#Setup HTTP	
+			#Setup HTTP	
 			http = Net::HTTP.new(uri.host, uri.port)
 			http.open_timeout = 2 # in seconds
 			http.read_timeout = 2 # in seconds
@@ -57,7 +57,7 @@ File.open(input_file).each_line{|target|
 		
 			#Setup exception handeling for connection refused and reset. Reset will attempt to connect again via SSL
 			#Other exceptions: Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
-       		#Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError 
+       			#Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError 
 			begin
 				#Setup Get request, grab response body
 				request = Net::HTTP::Get.new(uri.request_uri)
