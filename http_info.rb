@@ -19,8 +19,8 @@ input_file = ARGV[0]
 
 #check argument is supplied
 unless ARGV.length == 1
-  puts "Usage: http_info.rb <FILENAME>"
-  puts "Provide list of IP:PORT\n"
+  puts "[-]Usage: ./http_info.rb <IP:PORT.txt>"
+  puts "[-]Provide list of IP:PORT\n"
   exit
 end
 
