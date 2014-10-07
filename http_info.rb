@@ -2,10 +2,12 @@
 #Filename: http_info.rb 
 #Description: Takes in a text file of ip:port and will make a request to grab the title and server header.
 #useful for taking in nmap/nessus parsed data to quickly gain info on  potential HTTP targets with their server and titles.
-#Todo: 
-# - better https check, 
-# - add timeout parameter 
+#Todo:
+# - better https check
+# - add timeout parameter
 # - rewrite with httparty or faraday
+
+#!/usr/bin/ruby -w
 
 require 'net/http'
 require 'uri'
