@@ -73,6 +73,8 @@ File.open(input_file).each_line{|target|
 			rescue Errno::ECONNRESET
 				p "Connection Reset on #{host}, Trying SSL"
 				http.use_ssl = true
+				#still connect on SSL verfication errors
+				http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 				retry
 			end
 
