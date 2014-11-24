@@ -70,6 +70,9 @@ File.open(input_file).each_line{|target|
 			rescue 	Errno::ECONNREFUSED
 				p "Connection refused to #{host}"
 				next
+      rescue Timeout::Error
+        p "Timeout error on #{host}"
+        next
 			rescue Errno::ECONNRESET
 				p "Connection Reset on #{host}, Trying SSL"
 				http.use_ssl = true
