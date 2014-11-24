@@ -52,6 +52,8 @@ File.open(input_file).each_line{|target|
 			if uri.port == 443 || uri.port == 8443
 			#SSL enable
 			http.use_ssl = true
+			#still connect on SSL verfication errors
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			end
 		
 			#logger file - useful for debugging and getting more info on host
