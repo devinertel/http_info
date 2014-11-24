@@ -73,7 +73,10 @@ File.open(input_file).each_line{|target|
       rescue Timeout::Error
         p "Timeout error on #{host}"
         next
-			rescue Errno::ECONNRESET
+      rescue EOFError
+        p "Error on #{host}:#{port}"
+        next
+      rescue Errno::ECONNRESET
 				p "Connection Reset on #{host}, Trying SSL"
 				http.use_ssl = true
 				#still connect on SSL verfication errors
